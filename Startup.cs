@@ -2,11 +2,12 @@
 {
     using AutoMapper;
     using DotNetCoreKit.FluentValidations;
-
+    using DotNetCoreKit.Models;
     using FluentValidation.AspNetCore;
 
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
 
@@ -27,6 +28,8 @@
         /// </param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<PeopleContext>(opt => opt.UseInMemoryDatabase("PeopleList"));
+
             services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<PersonValidator>());
             services.AddAutoMapper();
 
