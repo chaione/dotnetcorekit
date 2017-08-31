@@ -1,4 +1,4 @@
-namespace DotNetCoreKit.Validators.Extensions.Helpers
+namespace DotNetCoreKit.FluentValidations.Extensions.Helpers
 {
     using System.Collections.Generic;
 

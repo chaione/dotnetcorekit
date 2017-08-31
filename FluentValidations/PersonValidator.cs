@@ -1,8 +1,8 @@
-namespace DotNetCoreKit.Validators
+namespace DotNetCoreKit.FluentValidations
 {
     using System.Collections.Generic;
 
-    using DotNetCoreKit.Validators.Extensions;
+    using DotNetCoreKit.FluentValidations.Extensions;
 
     using FluentValidation;
 
@@ -17,7 +17,7 @@ namespace DotNetCoreKit.Validators
     }
 
     /// <summary>
-    /// The person validator.
+    /// The person fluentvalidator.
     /// </summary>
     public class PersonValidator : AbstractValidator<Person>
     {

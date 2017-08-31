@@ -1,6 +1,6 @@
 ﻿namespace DotNetCoreKit
 {
-    using DotNetCoreKit.Validators;
+    using DotNetCoreKit.FluentValidations;
 
     using FluentValidation.AspNetCore;
 

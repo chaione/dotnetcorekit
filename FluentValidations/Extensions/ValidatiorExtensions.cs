@@ -1,8 +1,8 @@
-﻿namespace DotNetCoreKit.Validators.Extensions
+﻿namespace DotNetCoreKit.FluentValidations.Extensions
 {
     using System.Collections.Generic;
 
-    using DotNetCoreKit.Validators.Extensions.Helpers;
+    using DotNetCoreKit.FluentValidations.Extensions.Helpers;
 
     using FluentValidation;
 
