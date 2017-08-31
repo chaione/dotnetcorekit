@@ -1,5 +1,6 @@
 ﻿namespace DotNetCoreKit
 {
+    using AutoMapper;
     using DotNetCoreKit.FluentValidations;
 
     using FluentValidation.AspNetCore;
@@ -27,6 +28,9 @@
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<PersonValidator>());
+            services.AddAutoMapper();
+
+            Mapper.Configuration.AssertConfigurationIsValid();
         }
 
         /// <summary>
