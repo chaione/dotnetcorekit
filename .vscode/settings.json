@@ -1,0 +1,21 @@
+{
+    "editor.insertSpaces": true,
+    "editor.autoIndent": true,
+    "editor.showFoldingControls": "always",
+    "editor.codeLens": true,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "all",
+    "files.eol": "\n",
+    "omnisharp.useEditorFormattingSettings": true,
+    "csharpextensions.reFormatAfterChange": false,
+    "csharp.suppressHiddenDiagnostics": false,
+    "csharpfixformat.sort.usings.splitGroups": true,
+    "csharpfixformat.style.spaces.insideEmptyBraces": false,
+    "csharpfixformat.style.enabled": true,
+    "csharpfixformat.style.braces.onSameLine": true,
+    "csharpfixformat.style.spaces.beforeParenthesis": false,
+    "cSpell.words": [
+        "Validators"
+    ]
+}

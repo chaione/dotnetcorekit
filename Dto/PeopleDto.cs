@@ -1,15 +1,17 @@
 // -----------------------------------------------------------------------
-// <copyright file="People.cs" company="ChaiOne">
+// <copyright file="PeopleDto.cs" company="ChaiOne">
 // Copyright (c) ChaiOne. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.Models
+namespace DotNetCoreKit.Dto
 {
+    using System.Collections.Generic;
+
     /// <summary>
-    /// The people.
+    /// The people dto.
     /// </summary>
-    public class People
+    public class PeopleDto
     {
         /// <summary>
         /// Gets or sets the id.
@@ -30,5 +32,10 @@ namespace DotNetCoreKit.Models
         /// Gets or sets the age.
         /// </summary>
         public int Age { get; set; }
+
+        /// <summary>
+        /// Gets or sets the pets.
+        /// </summary>
+        public List<int> Pets { get; set; }
     }
 }

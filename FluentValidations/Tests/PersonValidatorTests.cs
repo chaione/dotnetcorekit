@@ -1,3 +1,9 @@
+// -----------------------------------------------------------------------
+// <copyright file="PersonValidatorTests.cs" company="ChaiOne">
+// Copyright (c) ChaiOne. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
+
 namespace DotNetCoreKit.FluentValidations.Tests
 {
     using DotNetCoreKit.FluentValidations;
@@ -12,26 +18,38 @@ namespace DotNetCoreKit.FluentValidations.Tests
     [TestFixture]
     public class PersonValidatorTests
     {
-        private PersonValidator _validator;
+        /// <summary>
+        /// Gets the _validator.
+        /// </summary>
+        public PersonValidator Validator { get; private set; }
 
+        /// <summary>
+        /// The setup.
+        /// </summary>
         [SetUp]
         public void Setup()
         {
-            this._validator = new PersonValidator();
+            Validator = new PersonValidator();
         }
 
+        /// <summary>
+        /// The should_have_error_when_ name_is_null.
+        /// </summary>
         [Test]
         public void Should_have_error_when_Name_is_null()
         {
-            this._validator.ShouldHaveValidationErrorFor(person => person.Name, null as string);
+            Validator.ShouldHaveValidationErrorFor(person => person.Name, null as string);
         }
 
+        /// <summary>
+        /// The should_not_have_error_when_name_is_specified.
+        /// </summary>
         [Test]
         public void Should_not_have_error_when_name_is_specified()
         {
             var person = new Person { Name = "Jeremy" };
-            this._validator.ShouldNotHaveValidationErrorFor(x => x.Name, person);
-            this._validator.ShouldHaveChildValidator(x => x.Pets, typeof(int));
+            Validator.ShouldNotHaveValidationErrorFor(x => x.Name, person);
+            Validator.ShouldHaveChildValidator(x => x.Pets, typeof(int));
         }
     }
 }

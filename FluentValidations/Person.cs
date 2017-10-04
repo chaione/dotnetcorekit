@@ -1,15 +1,17 @@
 // -----------------------------------------------------------------------
-// <copyright file="People.cs" company="ChaiOne">
+// <copyright file="Person.cs" company="ChaiOne">
 // Copyright (c) ChaiOne. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.Models
+namespace DotNetCoreKit.FluentValidations
 {
+    using System.Collections.Generic;
+
     /// <summary>
-    /// The people.
+    /// The person.
     /// </summary>
-    public class People
+    public class Person
     {
         /// <summary>
         /// Gets or sets the id.
@@ -30,5 +32,10 @@ namespace DotNetCoreKit.Models
         /// Gets or sets the age.
         /// </summary>
         public int Age { get; set; }
+
+        /// <summary>
+        /// Gets or sets the pets.
+        /// </summary>
+        public List<int> Pets { get; set; }
     }
 }

@@ -1,27 +1,48 @@
-﻿namespace DotNetCoreKit
+﻿// -----------------------------------------------------------------------
+// <copyright file="Startup.cs" company="ChaiOne">
+// Copyright (c) ChaiOne. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
+
+namespace DotNetCoreKit
 {
     using AutoMapper;
+
     using DotNetCoreKit.FluentValidations;
     using DotNetCoreKit.Models;
+
     using FluentValidation.AspNetCore;
 
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
+
     using Microsoft.Extensions.DependencyInjection;
 
+    /// <summary>
+    /// The startup.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Startup"/> class.
+        /// </summary>
+        /// <param name="configuration">
+        /// The configuration.
+        /// </param>
         public Startup(IConfiguration configuration)
         {
-            this.Configuration = configuration;
+            Configuration = configuration;
         }
 
+        /// <summary>
+        /// Gets the configuration.
+        /// </summary>
         public IConfiguration Configuration { get; }
 
         /// <summary>
-        /// This method gets called by the runtime. Use this method to add services to the container.        
+        /// This method gets called by the runtime. Use this method to add services to the container.
         /// </summary>
         /// <param name="services">
         /// The services.

@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "ms-vscode.csharp",
+        "Leopotam.csharpfixformat",
+        "jchannon.csharpextensions",
+        "reflectiondm.classynaming",
+        "streetsidesoftware.code-spell-checker",
+        "eamodio.gitlens",
+        "wayou.vscode-todo-highlight"
+    ]
+}
