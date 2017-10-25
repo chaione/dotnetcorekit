@@ -6,6 +6,8 @@
         "reflectiondm.classynaming",
         "streetsidesoftware.code-spell-checker",
         "eamodio.gitlens",
-        "wayou.vscode-todo-highlight"
+        "wayou.vscode-todo-highlight",
+        "bierner.markdown-preview-github-styles",
+        "DavidAnson.vscode-markdownlint"
     ]
 }
