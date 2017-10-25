@@ -7,18 +7,14 @@
 namespace DotNetCoreKit
 {
     using AutoMapper;
-
-    using DotNetCoreKit.FluentValidations;
-    using DotNetCoreKit.Models;
-
     using FluentValidation.AspNetCore;
-
+    using FluentValidations;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
-
     using Microsoft.Extensions.DependencyInjection;
+    using Models;
 
     /// <summary>
     /// The startup.

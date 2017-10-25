@@ -12,6 +12,7 @@ namespace DotNetCoreKit.FluentValidations
 
     // TODO: Extract this to a new project so that we can have a simpler project with just models, input and output dto's
 
+    /// <inheritdoc />
     /// <summary>
     /// The person fluentvalidator.
     /// </summary>

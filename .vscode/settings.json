@@ -16,6 +16,11 @@
     "csharpfixformat.style.braces.onSameLine": true,
     "csharpfixformat.style.spaces.beforeParenthesis": false,
     "cSpell.words": [
-        "Validators"
+        "Guid",
+        "Validators",
+        "mscorlib",
+        "ruleset",
+        "stylecop",
+        "xmlns"
     ]
 }

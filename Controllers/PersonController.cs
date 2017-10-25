@@ -15,6 +15,7 @@ namespace DotNetCoreKit.Controllers
     using DotNetCoreKit.Models;
     using Microsoft.AspNetCore.Mvc;
 
+    /// <inheritdoc />
     /// <summary>
     /// The person controller.
     /// </summary>
@@ -43,7 +44,7 @@ namespace DotNetCoreKit.Controllers
         /// <summary>
         /// Gets or sets the context.
         /// </summary>
-        public PeopleContext Context { get; set; }
+        private PeopleContext Context { get; set; }
 
         /// <summary>
         /// The get all people.

@@ -8,6 +8,7 @@ namespace DotNetCoreKit.Models
 {
     using Microsoft.EntityFrameworkCore;
 
+    /// <inheritdoc />
     /// <summary>
     /// The people context.
     /// </summary>

@@ -11,6 +11,7 @@ namespace DotNetCoreKit.Controllers
 
     using Microsoft.AspNetCore.Mvc;
 
+    /// <inheritdoc />
     /// <summary>
     /// The values controller.
     /// </summary>
