@@ -10,10 +10,11 @@ namespace DotNetCoreKit.Controllers
     using System.Collections.Generic;
     using System.Linq;
     using AutoMapper;
-    using DotNetCoreKit.Dto;
-    using DotNetCoreKit.FluentValidations;
-    using DotNetCoreKit.Models;
+    using DomainModels;
+    using Dto;
+    using FluentValidations;
     using Microsoft.AspNetCore.Mvc;
+    using Models;
 
     /// <inheritdoc />
     /// <summary>

@@ -7,10 +7,9 @@
 namespace DotNetCoreKit.AutoMapperProfiles
 {
     using AutoMapper;
-
-    using DotNetCoreKit.Dto;
-    using DotNetCoreKit.FluentValidations;
-    using DotNetCoreKit.Models;
+    using DomainModels;
+    using Dto;
+    using FluentValidations;
 
     /// <summary>
     /// The people profile.

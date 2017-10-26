@@ -36,4 +36,7 @@
     <ItemGroup>
         <AdditionalFiles Include="_stylecop\stylecop.json" Link="stylecop.json" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\DotNetCoreKit.DomainModels\DotNetCoreKit.DomainModels.csproj" />
+    </ItemGroup>
 </Project>
