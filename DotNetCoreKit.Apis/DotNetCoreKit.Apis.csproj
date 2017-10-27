@@ -44,4 +44,13 @@
     <ItemGroup>
       <ProjectReference Include="..\DotNetCoreKit.DomainModels\DotNetCoreKit.DomainModels.csproj" />
     </ItemGroup>
+    <ItemGroup>
+      <None Include="wwwroot\favicon.ico" />
+      <None Include="wwwroot\swagger\custom.css" />
+      <None Include="wwwroot\swagger\images\favicon-16x16.png" />
+      <None Include="wwwroot\swagger\images\favicon-32x32.png" />
+      <None Include="wwwroot\swagger\images\favicon.ico" />
+      <None Include="wwwroot\swagger\images\logo_small.png" />
+      <None Include="wwwroot\swagger\images\throbber.gif" />
+    </ItemGroup>
 </Project>

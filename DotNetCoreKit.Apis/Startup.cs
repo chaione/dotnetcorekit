@@ -84,6 +84,8 @@ namespace DotNetCoreKit.Apis
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             // Enable Middle-ware to serve generated swagger as a JSON endpoint.
             app.UseSwagger();
 
@@ -91,6 +93,7 @@ namespace DotNetCoreKit.Apis
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.InjectStylesheet("/swagger/custom.css");
             });
 
             app.UseMvc();
