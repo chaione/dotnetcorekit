@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit", "DotNetCoreKit.csproj", "{357EEB2B-4249-4F92-8FC9-61A042EE1811}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_stylecop", "_stylecop", "{46D6655D-AC94-4190-95D0-A501B5AB3F70}"
 	ProjectSection(SolutionItems) = preProject
 		_stylecop\CustomDictionary.xml = _stylecop\CustomDictionary.xml
@@ -12,9 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_stylecop", "_stylecop", "{
 		_stylecop\StyleCopRules.ruleset = _stylecop\StyleCopRules.ruleset
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreKit.DomainModels", "..\DotNetCoreKit.DomainModels\DotNetCoreKit.DomainModels.csproj", "{5A2ED70D-8A62-40D4-8DF9-A9829364592B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.DomainManager", "DotNetCoreKit.DomainManager\DotNetCoreKit.DomainManager.csproj", "{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreKit.DomainManager", "DotNetCoreKit.DomainManager\DotNetCoreKit.DomainManager.csproj", "{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.DomainModels", "DotNetCoreKit.DomainModels\DotNetCoreKit.DomainModels.csproj", "{018B6419-3734-4BA8-BBBC-8878EA439671}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Apis", "DotNetCoreKit.Apis\DotNetCoreKit.Apis.csproj", "{7F3C8F82-E322-4C8B-BF8A-A8A8F4A3A5AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,18 +22,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{357EEB2B-4249-4F92-8FC9-61A042EE1811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{357EEB2B-4249-4F92-8FC9-61A042EE1811}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{357EEB2B-4249-4F92-8FC9-61A042EE1811}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{357EEB2B-4249-4F92-8FC9-61A042EE1811}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A2ED70D-8A62-40D4-8DF9-A9829364592B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A2ED70D-8A62-40D4-8DF9-A9829364592B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A2ED70D-8A62-40D4-8DF9-A9829364592B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A2ED70D-8A62-40D4-8DF9-A9829364592B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{018B6419-3734-4BA8-BBBC-8878EA439671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{018B6419-3734-4BA8-BBBC-8878EA439671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{018B6419-3734-4BA8-BBBC-8878EA439671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{018B6419-3734-4BA8-BBBC-8878EA439671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F3C8F82-E322-4C8B-BF8A-A8A8F4A3A5AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3C8F82-E322-4C8B-BF8A-A8A8F4A3A5AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3C8F82-E322-4C8B-BF8A-A8A8F4A3A5AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3C8F82-E322-4C8B-BF8A-A8A8F4A3A5AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.Models
+namespace DotNetCoreKit.Apis.Models
 {
     using DomainModels;
     using Microsoft.EntityFrameworkCore;

@@ -4,10 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.FluentValidations.Extensions.Helpers
+namespace DotNetCoreKit.Apis.FluentValidations.Extensions.Helpers
 {
     using System.Collections.Generic;
-
     using FluentValidation.Validators;
 
     /// <summary>

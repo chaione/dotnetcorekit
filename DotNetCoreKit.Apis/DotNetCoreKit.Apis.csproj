@@ -1,11 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
     <PropertyGroup>
         <TargetFramework>netcoreapp2.0</TargetFramework>
-        <AssemblyName>DotNetCoreKit</AssemblyName>
-        <RootNamespace>DotNetCoreKit</RootNamespace>
+        <AssemblyName>DotNetCoreKit.Apis</AssemblyName>
+        <RootNamespace>DotNetCoreKit.Apis</RootNamespace>
         <GenerateFullPaths>true</GenerateFullPaths>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <CodeAnalysisRuleSet>_stylecop\StyleCopRules.ruleset</CodeAnalysisRuleSet>
+        <CodeAnalysisRuleSet>..\_stylecop\StyleCopRules.ruleset</CodeAnalysisRuleSet>
+        <ApplicationIcon />
+        <OutputType>WinExe</OutputType>
+        <StartupObject />
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
         <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
@@ -16,7 +19,7 @@
     <ItemGroup>
         <PackageReference Include="Autofac" Version="4.6.2" />
         <PackageReference Include="AutoMapper" Version="6.1.1" />
-        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.0.1" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.1.0" />
         <PackageReference Include="FluentAssertions" Version="4.19.4" />
         <PackageReference Include="FluentAssertions.Json" Version="4.20.1" />
         <PackageReference Include="FluentValidation.AspNetCore" Version="7.2.1" />
@@ -31,10 +34,10 @@
         <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta004" PrivateAssets="All" />
     </ItemGroup>
     <ItemGroup>
-        <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+        <AdditionalFiles Include="..\_stylecop\stylecop.json" Link="stylecop.json" />
     </ItemGroup>
     <ItemGroup>
-        <AdditionalFiles Include="_stylecop\stylecop.json" Link="stylecop.json" />
+        <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\DotNetCoreKit.DomainModels\DotNetCoreKit.DomainModels.csproj" />

@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.Controllers
+namespace DotNetCoreKit.Apis.Controllers
 {
     using System.Collections;
     using System.Collections.Generic;

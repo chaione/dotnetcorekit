@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.AutoMapperProfiles
+namespace DotNetCoreKit.Apis.AutoMapperProfiles
 {
     using AutoMapper;
     using DomainModels;

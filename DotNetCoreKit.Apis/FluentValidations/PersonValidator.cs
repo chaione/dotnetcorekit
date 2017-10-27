@@ -4,10 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.FluentValidations
+namespace DotNetCoreKit.Apis.FluentValidations
 {
-    using DotNetCoreKit.FluentValidations.Extensions;
-
+    using Extensions;
     using FluentValidation;
 
     // TODO: Extract this to a new project so that we can have a simpler project with just models, input and output dto's

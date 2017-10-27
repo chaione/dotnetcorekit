@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit
+namespace DotNetCoreKit.Apis
 {
     using AutoMapper;
     using FluentValidation.AspNetCore;

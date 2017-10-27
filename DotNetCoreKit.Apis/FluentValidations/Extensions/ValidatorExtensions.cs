@@ -4,13 +4,11 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.FluentValidations.Extensions
+namespace DotNetCoreKit.Apis.FluentValidations.Extensions
 {
     using System.Collections.Generic;
-
-    using DotNetCoreKit.FluentValidations.Extensions.Helpers;
-
     using FluentValidation;
+    using Helpers;
 
     /// <summary>
     /// The validator extensions.

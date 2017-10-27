@@ -1,17 +1,17 @@
 // -----------------------------------------------------------------------
-// <copyright file="Person.cs" company="ChaiOne">
+// <copyright file="PeopleDto.cs" company="ChaiOne">
 // Copyright (c) ChaiOne. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.FluentValidations
+namespace DotNetCoreKit.Apis.Dto
 {
     using System.Collections.Generic;
 
     /// <summary>
-    /// The person.
+    /// The people dto.
     /// </summary>
-    public class Person
+    public class PeopleDto
     {
         /// <summary>
         /// Gets or sets the id.

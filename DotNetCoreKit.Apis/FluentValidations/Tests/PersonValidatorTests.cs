@@ -4,12 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.FluentValidations.Tests
+namespace DotNetCoreKit.Apis.FluentValidations.Tests
 {
-    using DotNetCoreKit.FluentValidations;
-
     using FluentValidation.TestHelper;
-
     using NUnit.Framework;
 
     /// <summary>
