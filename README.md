@@ -2,6 +2,10 @@
 
 This will contain a starter kit that does more than just the generic blank project up that you get with .NetCore project creation.
 
+![AspNetCore 2.0](https://img.shields.io/badge/Asp.Net-2.0-green.svg?style=flat)
+![C Sharp 7.0](https://img.shields.io/badge/C%23-7.0-green.svg?style=flat)
+![.NetStandard 2.0](https://img.shields.io/badge/.NetStandard-2.0-green.svg?style=flat)
+
 ## Getting Started
 
 1. Install [VS Code](https://code.visualstudio.com/Download) if not installed already
