@@ -6,6 +6,7 @@
 
 namespace DotNetCoreKit.Apis
 {
+    using System.IO;
     using AutoMapper;
     using FluentValidation.AspNetCore;
     using FluentValidations;
@@ -14,7 +15,9 @@ namespace DotNetCoreKit.Apis
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.PlatformAbstractions;
     using Models;
+    using Swashbuckle.AspNetCore.Swagger;
 
     /// <summary>
     /// The startup.
@@ -48,7 +51,19 @@ namespace DotNetCoreKit.Apis
             services.AddDbContext<PeopleContext>(opt => opt.UseInMemoryDatabase("PeopleList"));
 
             services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<PersonValidator>());
+
             services.AddAutoMapper();
+            services.AddSwaggerGen(c =>
+           {
+               c.SwaggerDoc("v1", new Info { Title = "My Api", Version = "v1" });
+
+               // Set the comments path for the Swagger JSON and UI.
+               var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+               var xmlPath = Path.Combine(basePath, "DotNetCoreKit.xml");
+               c.IncludeXmlComments(xmlPath);
+               c.DescribeAllEnumsAsStrings();
+               c.DescribeAllParametersInCamelCase();
+           });
 
             Mapper.Configuration.AssertConfigurationIsValid();
         }
@@ -68,6 +83,15 @@ namespace DotNetCoreKit.Apis
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Enable Middle-ware to serve generated swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable Middle-ware to serve swagger-ui
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseMvc();
         }

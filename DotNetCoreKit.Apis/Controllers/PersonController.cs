@@ -57,7 +57,7 @@ namespace DotNetCoreKit.Apis.Controllers
         public IEnumerable<People> GetAll() => Context.People.ToList();
 
         /// <summary>
-        /// The get by id.
+        /// Gets the person by id.
         /// </summary>
         /// <param name="id">
         /// The id.
@@ -78,8 +78,21 @@ namespace DotNetCoreKit.Apis.Controllers
         }
 
         /// <summary>
-        /// The create.
+        /// Creates the person that is specified.
         /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Person
+        ///     {
+        ///        "id": 1,
+        ///        "name": "Tom Bombadil",
+        ///        "email": tom.bombadil@lotr.com,
+        ///        "age": 62,
+        ///        "pets": []
+        ///     }
+        ///
+        /// </remarks>
         /// <param name="person">
         /// The person.
         /// </param>
@@ -104,7 +117,7 @@ namespace DotNetCoreKit.Apis.Controllers
         }
 
         /// <summary>
-        /// The update.
+        /// Updates the person that is specified.
         /// </summary>
         /// <param name="id">
         /// The id.
@@ -138,7 +151,7 @@ namespace DotNetCoreKit.Apis.Controllers
         }
 
         /// <summary>
-        /// The delete.
+        /// Deletes the person that is specified.
         /// </summary>
         /// <param name="id">
         /// The id.
