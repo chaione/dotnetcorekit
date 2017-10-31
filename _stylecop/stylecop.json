@@ -9,7 +9,28 @@
         "documentationRules": {
             "companyName": "ChaiOne",
             "copyrightText": "Copyright (c) {companyName}. All rights reserved.",
-            "headerDecoration": "-----------------------------------------------------------------------"
+            "headerDecoration": "-----------------------------------------------------------------------",
+            "fileNamingConvention": "metadata"
+        },
+        "orderingRules": {
+            "blankLinesBetweenUsingGroups": "omit",
+            "elementOrder": [
+                "kind",
+                "constant",
+                "accessibility",
+                "static",
+                "readonly"
+            ]
+        },
+        "layoutRules": {
+            "newlineAtEndOfFile": "omit"
+        },
+        "maintainabilityRules": {
+            "topLevelTypes": [
+                "class",
+                "interface",
+                "enum"
+            ]
         }
     }
 }

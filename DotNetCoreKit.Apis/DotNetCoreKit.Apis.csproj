@@ -53,4 +53,7 @@
       <None Include="wwwroot\swagger\images\logo_small.png" />
       <None Include="wwwroot\swagger\images\throbber.gif" />
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="FluentValidations\Extensions\Helpers\" />
+    </ItemGroup>
 </Project>

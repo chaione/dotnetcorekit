@@ -1,5 +1,5 @@
-// -----------------------------------------------------------------------
-// <copyright file="ListCountValidator.cs" company="ChaiOne">
+﻿// -----------------------------------------------------------------------
+// <copyright file="ListCountValidator`1.cs" company="ChaiOne">
 // Copyright (c) ChaiOne. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
