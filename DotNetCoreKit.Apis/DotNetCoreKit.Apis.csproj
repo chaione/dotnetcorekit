@@ -9,6 +9,7 @@
         <ApplicationIcon />
         <OutputType>WinExe</OutputType>
         <StartupObject />
+        <Description>Contains the public api's that are exposed and consumed by end users/apps.</Description>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
         <TreatWarningsAsErrors>True</TreatWarningsAsErrors>

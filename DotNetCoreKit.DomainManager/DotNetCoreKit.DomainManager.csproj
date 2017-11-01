@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Contains the core of the business logic and interacts with the database via repository and unit of work pattern, potentially utilizing a composition approach to construct our repository behaviors.</Description>
   </PropertyGroup>
 
   <ItemGroup>
