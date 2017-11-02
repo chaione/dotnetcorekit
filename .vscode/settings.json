@@ -10,10 +10,10 @@
     "omnisharp.useEditorFormattingSettings": true,
     "csharpextensions.reFormatAfterChange": false,
     "csharp.suppressHiddenDiagnostics": false,
+    "csharpfixformat.style.enabled": true,
     "csharpfixformat.sort.usings.splitGroups": true,
     "csharpfixformat.style.spaces.insideEmptyBraces": false,
-    "csharpfixformat.style.enabled": true,
-    "csharpfixformat.style.braces.onSameLine": true,
+    "csharpfixformat.style.braces.onSameLine": false,
     "csharpfixformat.style.spaces.beforeParenthesis": false,
     "cSpell.words": [
         "Guid",

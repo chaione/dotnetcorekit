@@ -7,6 +7,7 @@
 namespace DotNetCoreKit.Apis.Models
 {
     using DomainModels;
+
     using Microsoft.EntityFrameworkCore;
 
     /// <inheritdoc />

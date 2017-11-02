@@ -1,7 +1,9 @@
 {
     "formattingOptions": {
+        "NewLine": "\n",
         "UseTabs": false,
-        "NewLinesForBracesInTypes": false,
+        "TabSize": 4,
+        "IndentationSize": 4,
         "NewLinesForBracesInMethods": false,
         "NewLinesForBracesInProperties": false,
         "NewLinesForBracesInAccessors": false,

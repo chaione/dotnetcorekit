@@ -7,16 +7,22 @@
 namespace DotNetCoreKit.Apis
 {
     using System.IO;
+
     using AutoMapper;
+
     using FluentValidation.AspNetCore;
+
     using FluentValidations;
+
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.PlatformAbstractions;
+
     using Models;
+
     using Swashbuckle.AspNetCore.Swagger;
 
     /// <summary>
@@ -54,16 +60,16 @@ namespace DotNetCoreKit.Apis
 
             services.AddAutoMapper();
             services.AddSwaggerGen(c =>
-           {
-               c.SwaggerDoc("v1", new Info { Title = "My Api", Version = "v1" });
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My Api", Version = "v1" });
 
-               // Set the comments path for the Swagger JSON and UI.
-               var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-               var xmlPath = Path.Combine(basePath, "DotNetCoreKit.xml");
-               c.IncludeXmlComments(xmlPath);
-               c.DescribeAllEnumsAsStrings();
-               c.DescribeAllParametersInCamelCase();
-           });
+                // Set the comments path for the Swagger JSON and UI.
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                var xmlPath = Path.Combine(basePath, "DotNetCoreKit.xml");
+                c.IncludeXmlComments(xmlPath);
+                c.DescribeAllEnumsAsStrings();
+                c.DescribeAllParametersInCamelCase();
+            });
 
             Mapper.Configuration.AssertConfigurationIsValid();
         }

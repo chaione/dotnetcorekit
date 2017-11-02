@@ -13,7 +13,7 @@
             "fileNamingConvention": "metadata"
         },
         "orderingRules": {
-            "blankLinesBetweenUsingGroups": "omit",
+            "blankLinesBetweenUsingGroups": "require",
             "elementOrder": [
                 "kind",
                 "constant",

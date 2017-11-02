@@ -16,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.DomainModels"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Apis", "DotNetCoreKit.Apis\DotNetCoreKit.Apis.csproj", "{7F3C8F82-E322-4C8B-BF8A-A8A8F4A3A5AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreKit.Utilities", "DotNetCoreKit.Utilities\DotNetCoreKit.Utilities.csproj", "{83EA4F24-F6A1-4547-96DE-589004D0A5C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Utilities", "DotNetCoreKit.Utilities\DotNetCoreKit.Utilities.csproj", "{83EA4F24-F6A1-4547-96DE-589004D0A5C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

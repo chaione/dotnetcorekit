@@ -7,6 +7,7 @@
 namespace DotNetCoreKit.Apis.FluentValidations.Extensions.Helpers
 {
     using System.Collections.Generic;
+
     using FluentValidation.Validators;
 
     /// <summary>
@@ -24,7 +25,7 @@ namespace DotNetCoreKit.Apis.FluentValidations.Extensions.Helpers
         /// </param>
         public ListCountValidator(int max)
             : base("{PropertyName} must contain fewer than {MaxElements} items.")
-        {
+            {
             Max = max;
         }
 
@@ -44,9 +45,7 @@ namespace DotNetCoreKit.Apis.FluentValidations.Extensions.Helpers
         /// </returns>
         protected override bool IsValid(PropertyValidatorContext context)
         {
-            var list = context.PropertyValue as IList<T>;
-
-            if (list == null || list.Count < Max)
+            if (!(context.PropertyValue is IList<T> list) || list.Count < Max)
             {
                 return true;
             }

@@ -8,6 +8,7 @@ namespace DotNetCoreKit.Apis.Controllers
 {
     using System.Collections;
     using System.Collections.Generic;
+
     using Microsoft.AspNetCore.Mvc;
 
     /// <inheritdoc />
@@ -51,7 +52,7 @@ namespace DotNetCoreKit.Apis.Controllers
         /// The value.
         /// </param>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody] string value)
         {
         }
 
@@ -65,7 +66,7 @@ namespace DotNetCoreKit.Apis.Controllers
         /// The value.
         /// </param>
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody] string value)
         {
         }
 

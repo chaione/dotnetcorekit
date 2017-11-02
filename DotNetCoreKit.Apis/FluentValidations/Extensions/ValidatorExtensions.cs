@@ -7,7 +7,9 @@
 namespace DotNetCoreKit.Apis.FluentValidations.Extensions
 {
     using System.Collections.Generic;
+
     using FluentValidation;
+
     using Helpers;
 
     /// <summary>
@@ -36,7 +38,7 @@ namespace DotNetCoreKit.Apis.FluentValidations.Extensions
         public static IRuleBuilderOptions<T, IList<TElement>> ListMustContainFewerThan<T, TElement>(
             this IRuleBuilder<T, IList<TElement>> ruleBuilder,
             int number)
-        {
+            {
             return ruleBuilder.SetValidator(new ListCountValidator<TElement>(number));
         }
     }
