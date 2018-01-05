@@ -10,31 +10,34 @@
         <OutputType>WinExe</OutputType>
         <StartupObject />
         <Description>Contains the public api's that are exposed and consumed by end users/apps.</Description>
+        <Configurations>Debug;Release</Configurations>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PropertyGroup>
         <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
         <TreatSpecificWarningsAsErrors />
         <NoWarn>1701;1702;1705</NoWarn>
-        <DocumentationFile>bin\Debug\netcoreapp2.0\DotNetCoreKit.xml</DocumentationFile>
+        <DocumentationFile>bin\$(Configuration)\netcoreapp2.0\DotNetCoreKit.xml</DocumentationFile>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Autofac" Version="4.6.2" />
-        <PackageReference Include="AutoMapper" Version="6.1.1" />
-        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.1.0" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+        <PackageReference Include="AutoMapper" Version="6.2.2" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
         <PackageReference Include="FluentAssertions" Version="4.19.4" />
         <PackageReference Include="FluentAssertions.Json" Version="4.20.1" />
-        <PackageReference Include="FluentValidation.AspNetCore" Version="7.2.1" />
-        <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
-        <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.0.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.3" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.0" />
-        <PackageReference Include="NUnit" Version="3.8.1" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="7.3.4" />
+        <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+        <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" />
+        <PackageReference Include="NUnit" Version="3.9.0" />
         <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta004" PrivateAssets="All" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="1.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="1.1.0" />
     </ItemGroup>
     <ItemGroup>
         <AdditionalFiles Include="..\_stylecop\stylecop.json" Link="stylecop.json" />
@@ -43,7 +46,10 @@
         <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\DotNetCoreKit.DomainModels\DotNetCoreKit.DomainModels.csproj" />
+      <ProjectReference Include="..\DotNetCoreKit.DomainManager\DotNetCoreKit.DomainManager.csproj" />
+      <ProjectReference Include="..\DotNetCoreKit.Models\DotNetCoreKit.Models.csproj" />
+      <ProjectReference Include="..\DotNetCoreKit.EntityFramework\DotNetCoreKit.EntityFramework.csproj" />
+      <ProjectReference Include="..\DotNetCoreKit.Utilities\DotNetCoreKit.Utilities.csproj" />
     </ItemGroup>
     <ItemGroup>
       <None Include="wwwroot\favicon.ico" />
@@ -56,5 +62,6 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="FluentValidations\Extensions\Helpers\" />
+      <Folder Include="Views\" />
     </ItemGroup>
 </Project>

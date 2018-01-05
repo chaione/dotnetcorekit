@@ -6,8 +6,11 @@
 
 namespace DotNetCoreKit.Apis
 {
+    using System.IO;
+
     using Microsoft.AspNetCore;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Logging;
 
     /// <summary>
     /// The program.
@@ -22,21 +25,19 @@ namespace DotNetCoreKit.Apis
         /// </param>
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
-        }
+            var host = WebHost.CreateDefaultBuilder(args)
+                .ConfigureLogging(factory =>
+                {
+                    factory.AddConsole();
+                    factory.AddFilter("Console", level => level >= LogLevel.Information);
+                })
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup<Startup>()
+                .Build();
 
-        /// <summary>
-        /// The build web host.
-        /// </summary>
-        /// <param name="args">
-        /// The args.
-        /// </param>
-        /// <returns>
-        /// The <see cref="IWebHost"/>.
-        /// </returns>
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-            .UseStartup<Startup>()
-            .Build();
+            host.Run();
+        }
     }
 }

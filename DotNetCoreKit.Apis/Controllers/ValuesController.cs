@@ -9,12 +9,14 @@ namespace DotNetCoreKit.Apis.Controllers
     using System.Collections;
     using System.Collections.Generic;
 
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     /// <inheritdoc />
     /// <summary>
     /// The values controller.
     /// </summary>
+    [Authorize]
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {

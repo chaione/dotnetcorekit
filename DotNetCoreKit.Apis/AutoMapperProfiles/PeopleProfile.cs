@@ -7,10 +7,11 @@
 namespace DotNetCoreKit.Apis.AutoMapperProfiles
 {
     using AutoMapper;
-    using DomainModels;
-    using Dto;
+    using DotNetCoreKit.Models.Domain;
+    using DotNetCoreKit.Models.Dto;
     using FluentValidations;
 
+    /// <inheritdoc />
     /// <summary>
     /// The people profile.
     /// </summary>

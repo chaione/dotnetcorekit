@@ -11,16 +11,19 @@ namespace DotNetCoreKit.Apis.Controllers
     using System.Linq;
 
     using AutoMapper;
-    using DomainModels;
-    using Dto;
+    using DotNetCoreKit.EntityFramework;
+    using DotNetCoreKit.Models.Domain;
+    using DotNetCoreKit.Models.Dto;
     using FluentValidations;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using Models;
+    using Utilities.Extensions;
 
     /// <inheritdoc />
     /// <summary>
     /// The person controller.
     /// </summary>
+    [Authorize]
     [Route("api/[controller]")]
     public class PersonController : Controller
     {
@@ -39,7 +42,7 @@ namespace DotNetCoreKit.Apis.Controllers
                 return;
             }
 
-            Context.People.Add(entity: new People { Name = "Item1" });
+            Context.People.Add(entity: new People { Name = "Item1", Email = SystemClock.Now.ToString() });
             Context.SaveChanges();
         }
 
@@ -47,6 +50,8 @@ namespace DotNetCoreKit.Apis.Controllers
         /// Gets or sets the context.
         /// </summary>
         private PeopleContext Context { get; set; }
+
+        private MachineClockDateTime SystemClock => new MachineClockDateTime();
 
         /// <summary>
         /// The get all people.

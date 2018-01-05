@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyName>DotNetCoreKit.Models</AssemblyName>
+        <RootNamespace>DotNetCoreKit.Models</RootNamespace>
+        <GenerateFullPaths>true</GenerateFullPaths>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <CodeAnalysisRuleSet>..\_stylecop\StyleCopRules.ruleset</CodeAnalysisRuleSet>
+        <Description>This project will contain all the Domain models that reflect the database schema, its possible that we might need to create multiple versions of a model if we go with a DDD approach to our db contexts.</Description>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+        <TreatSpecificWarningsAsErrors />
+        <NoWarn>1701;1702;1705</NoWarn>
+        <DocumentationFile>bin\$(Configuration)\netcoreapp2.0\DotNetCoreKit.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.0.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.0.1" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta004" PrivateAssets="All" />
+    </ItemGroup>
+    <ItemGroup>
+        <AdditionalFiles Include="..\_stylecop\stylecop.json" Link="stylecop.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Domain\" />
+    </ItemGroup>
+
+</Project>

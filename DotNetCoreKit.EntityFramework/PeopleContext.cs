@@ -4,16 +4,12 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.Apis.Models
+namespace DotNetCoreKit.EntityFramework
 {
-    using DomainModels;
-
+    using DotNetCoreKit.Models.Domain;
     using Microsoft.EntityFrameworkCore;
 
     /// <inheritdoc />
-    /// <summary>
-    /// The people context.
-    /// </summary>
     public class PeopleContext : DbContext
     {
         /// <summary>

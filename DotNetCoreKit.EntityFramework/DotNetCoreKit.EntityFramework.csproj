@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyName>DotNetCoreKit.EntityFramework</AssemblyName>
+        <RootNamespace>DotNetCoreKit.EntityFramework</RootNamespace>
+        <GenerateFullPaths>true</GenerateFullPaths>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <CodeAnalysisRuleSet>..\_stylecop\StyleCopRules.ruleset</CodeAnalysisRuleSet>
+        <Description>Contains the database contexts and migration scripts.</Description>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+        <TreatSpecificWarningsAsErrors />
+        <NoWarn>1701;1702;1705</NoWarn>
+        <DocumentationFile>bin\$(Configuration)\netcoreapp2.0\DotNetCoreKit.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta004" PrivateAssets="All" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="..\_stylecop\stylecop.json" Link="stylecop.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\DotNetCoreKit.Models\DotNetCoreKit.Models.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,8 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>This project will contain all the Domain models that reflect the database schema, its possible that we might need to create multiple versions of a model if we go with a DDD approach to our db contexts.</Description>
-  </PropertyGroup>
-
-</Project>

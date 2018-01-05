@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.Apis.Dto
+namespace DotNetCoreKit.Models.Dto
 {
     using System.Collections.Generic;
 
