@@ -50,5 +50,17 @@ namespace DotNetCoreKit.Apis.Controllers
         /// </summary>
         /// <returns>View</returns>
         public IActionResult Error() => View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+
+        /// <summary>
+        /// Navigation to api documentation page.
+        /// </summary>
+        /// <returns>Show the api documentation page.</returns>
+        public IActionResult Api()
+        {
+            ViewData["Message"] = "Your api documentation page.";
+            var link = Url.Link("Swagger", new { swaggerUi = "swagger" });
+
+            return Redirect(link.Replace("%23", string.Empty));
+        }
     }
 }

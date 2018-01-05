@@ -167,13 +167,18 @@ namespace DotNetCoreKit.Apis
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
                 c.InjectStylesheet("/swagger/custom.css");
+                c.DocExpansion("none");
+                c.ShowJsonEditor();
             });
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
+                    name: "DefaultApi",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "Swagger",
+                    template: "{swaggerUi=swagger}/#");
             });
 
             applicationLifetime.ApplicationStopped.Register(() => ApplicationContainer.Dispose());

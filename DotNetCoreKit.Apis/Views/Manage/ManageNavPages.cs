@@ -17,71 +17,71 @@ namespace DotNetCoreKit.Apis.Views.Manage
     public static class ManageNavPages
     {
         /// <summary>
-        /// Gets test
+        /// Gets active page string.
         /// </summary>
-        public static string ActivePageKey => "ActivePage";
+        private static string ActivePageKey => "ActivePage";
 
         /// <summary>
-        /// Gets test
+        /// Gets index string.
         /// </summary>
-        public static string Index => "Index";
+        private static string Index => "Index";
 
         /// <summary>
-        /// Gets test
+        /// Gets change password string.
         /// </summary>
-        public static string ChangePassword => "ChangePassword";
+        private static string ChangePassword => "ChangePassword";
 
         /// <summary>
-        /// Gets test
+        /// Gets external login string.
         /// </summary>
-        public static string ExternalLogins => "ExternalLogins";
+        private static string ExternalLogins => "ExternalLogins";
 
         /// <summary>
-        /// Gets test
+        /// Gets two factor authentication string.
         /// </summary>
-        public static string TwoFactorAuthentication => "TwoFactorAuthentication";
+        private static string TwoFactorAuthentication => "TwoFactorAuthentication";
 
         /// <summary>
-        /// Gets test
+        /// Gets index page
         /// </summary>
-        /// <param name="viewContext">y</param>
-        /// <returns>tets</returns>
+        /// <param name="viewContext">Current view context</param>
+        /// <returns>If the current page is index or not.</returns>
         public static string IndexNavClass(ViewContext viewContext) => PageNavClass(viewContext, Index);
 
         /// <summary>
-        /// Gets test
+        /// Gets change password page
         /// </summary>
-        /// <param name="viewContext">y</param>
-        /// <returns>tets</returns>
+        /// <param name="viewContext">Current view context</param>
+        /// <returns>If the current page is change password or not.</returns>
         public static string ChangePasswordNavClass(ViewContext viewContext) => PageNavClass(viewContext, ChangePassword);
 
         /// <summary>
-        /// Gets test
+        /// Gets the external login page.
         /// </summary>
-        /// <param name="viewContext">y</param>
-        /// <returns>tets</returns>
+        /// <param name="viewContext">Current view context</param>
+        /// <returns>If the current page is external login page or not.</returns>
         public static string ExternalLoginsNavClass(ViewContext viewContext) => PageNavClass(viewContext, ExternalLogins);
 
         /// <summary>
-        /// Gets test
+        /// Gets two factor authentication page.
         /// </summary>
-        /// <param name="viewContext">y</param>
-        /// <returns>tets</returns>
+        /// <param name="viewContext">Current view context</param>
+        /// <returns>If the current page is two factor authentication or not.</returns>
         public static string TwoFactorAuthenticationNavClass(ViewContext viewContext) => PageNavClass(viewContext, TwoFactorAuthentication);
 
         /// <summary>
-        /// test
+        /// Internal dictionary used to keep track of active pages.
         /// </summary>
-        /// <param name="viewData">tt</param>
-        /// <param name="activePage">te</param>
+        /// <param name="viewData">View data dictionary.</param>
+        /// <param name="activePage">Current active page.</param>
         public static void AddActivePage(this ViewDataDictionary viewData, string activePage) => viewData[ActivePageKey] = activePage;
 
         /// <summary>
-        /// test
+        /// Provides internal page navigation class.
         /// </summary>
-        /// <param name="viewContext">y</param>
-        /// <param name="page">t</param>
-        /// <returns>tets</returns>
+        /// <param name="viewContext">Current page context.</param>
+        /// <param name="page">Page to navigate to.</param>
+        /// <returns>Returns if the active page is the same as page navigating to.</returns>
         private static string PageNavClass(ViewContext viewContext, string page)
         {
             var activePage = viewContext.ViewData["ActivePage"] as string;
