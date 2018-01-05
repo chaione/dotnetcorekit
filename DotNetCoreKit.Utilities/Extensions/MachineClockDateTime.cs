@@ -8,7 +8,7 @@ namespace DotNetCoreKit.Utilities.Extensions
 {
     using System;
 
-    using Interfaces;
+    using DotNetCoreKit.Utilities.Interfaces;
 
     /// <inheritdoc />
     public class MachineClockDateTime : IDateTime

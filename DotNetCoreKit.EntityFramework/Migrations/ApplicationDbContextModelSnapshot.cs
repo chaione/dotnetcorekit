@@ -8,6 +8,7 @@ namespace DotNetCoreKit.EntityFramework.Migrations
 {
     using System;
 
+    using DotNetCoreKit.Utilities.Constants;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Infrastructure;
     using Microsoft.EntityFrameworkCore.Metadata;
@@ -31,10 +32,10 @@ namespace DotNetCoreKit.EntityFramework.Migrations
                     .IsConcurrencyToken();
 
                 b.Property<string>("Name")
-                    .HasAnnotation("MaxLength", 256);
+                    .HasAnnotation("MaxLength", IntegerConstants.MaxLength);
 
                 b.Property<string>("NormalizedName")
-                    .HasAnnotation("MaxLength", 256);
+                    .HasAnnotation("MaxLength", IntegerConstants.MaxLength);
 
                 b.HasKey("Id");
 
@@ -140,7 +141,7 @@ namespace DotNetCoreKit.EntityFramework.Migrations
                     .IsConcurrencyToken();
 
                 b.Property<string>("Email")
-                    .HasAnnotation("MaxLength", 256);
+                    .HasAnnotation("MaxLength", IntegerConstants.MaxLength);
 
                 b.Property<bool>("EmailConfirmed");
 
@@ -149,10 +150,10 @@ namespace DotNetCoreKit.EntityFramework.Migrations
                 b.Property<DateTimeOffset?>("LockoutEnd");
 
                 b.Property<string>("NormalizedEmail")
-                    .HasAnnotation("MaxLength", 256);
+                    .HasAnnotation("MaxLength", IntegerConstants.MaxLength);
 
                 b.Property<string>("NormalizedUserName")
-                    .HasAnnotation("MaxLength", 256);
+                    .HasAnnotation("MaxLength", IntegerConstants.MaxLength);
 
                 b.Property<string>("PasswordHash");
 
@@ -165,7 +166,7 @@ namespace DotNetCoreKit.EntityFramework.Migrations
                 b.Property<bool>("TwoFactorEnabled");
 
                 b.Property<string>("UserName")
-                    .HasAnnotation("MaxLength", 256);
+                    .HasAnnotation("MaxLength", IntegerConstants.MaxLength);
 
                 b.HasKey("Id");
 

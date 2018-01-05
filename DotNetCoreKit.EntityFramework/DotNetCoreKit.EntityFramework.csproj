@@ -28,6 +28,7 @@
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\DotNetCoreKit.Models\DotNetCoreKit.Models.csproj" />
+        <ProjectReference Include="..\DotNetCoreKit.Utilities\DotNetCoreKit.Utilities.csproj" />
     </ItemGroup>
 
 </Project>

@@ -7,14 +7,14 @@
     using Microsoft.EntityFrameworkCore.Migrations;
 
     /// <summary>
-    /// 
+    /// Designer for building out entity, initial schema
     /// </summary>
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("00000000000000_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {
         /// <summary>
-        /// 
+        /// Method used to build out the initial schema which is the identity user based.
         /// </summary>
         /// <param name="modelBuilder"></param>
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -13,21 +13,18 @@ namespace DotNetCoreKit.Apis.Controllers
 
     /// <inheritdoc />
     /// <summary>
-    /// The Home controller.
+    /// The Home controller used only for the api server when hosted to get documentation and generic info about api.
     /// </summary>
     public class HomeController : Controller
     {
         /// <summary>
-        /// test
+        /// Provides the main view page on server.
         /// </summary>
         /// <returns>View</returns>
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public IActionResult Index() => View();
 
         /// <summary>
-        /// test
+        /// Provides the action view for about page on server.
         /// </summary>
         /// <returns>View</returns>
         public IActionResult About()
@@ -38,7 +35,7 @@ namespace DotNetCoreKit.Apis.Controllers
         }
 
         /// <summary>
-        /// test
+        /// Provides the action view for contact page on server.
         /// </summary>
         /// <returns>View</returns>
         public IActionResult Contact()
@@ -49,12 +46,9 @@ namespace DotNetCoreKit.Apis.Controllers
         }
 
         /// <summary>
-        /// test
+        /// Provides the action view for errors on server.
         /// </summary>
         /// <returns>View</returns>
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        public IActionResult Error() => View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
