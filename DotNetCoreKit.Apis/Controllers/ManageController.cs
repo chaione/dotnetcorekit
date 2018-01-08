@@ -24,9 +24,7 @@ namespace DotNetCoreKit.Apis.Controllers
     using Microsoft.Extensions.Logging;
 
     /// <inheritdoc />
-    /// <summary>
-    /// The manage controller
-    /// </summary>
+    [ApiExplorerSettings(IgnoreApi = true)]
     [Authorize]
     [Route("[controller]/[action]")]
     public class ManageController : Controller

@@ -25,6 +25,7 @@ namespace DotNetCoreKit.Apis.Controllers
     /// <summary>
     /// The Account controller.
     /// </summary>
+    [ApiExplorerSettings(IgnoreApi = true)]
     [Authorize]
     [Route("[controller]/[action]")]
     public class AccountController : Controller
@@ -40,7 +41,7 @@ namespace DotNetCoreKit.Apis.Controllers
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger logger)
+            ILogger<AccountController> logger)
         {
             UserManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
             SignInManager = signInManager ?? throw new ArgumentNullException(nameof(signInManager));
