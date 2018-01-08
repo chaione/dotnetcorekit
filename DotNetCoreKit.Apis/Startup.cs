@@ -12,6 +12,7 @@ namespace DotNetCoreKit.Apis
     using Autofac;
     using Autofac.Extensions.DependencyInjection;
     using AutoMapper;
+    using DotNetCoreKit.Apis.Models;
     using DotNetCoreKit.EntityFramework;
     using DotNetCoreKit.Models.Domain;
     using FluentValidation.AspNetCore;
@@ -19,6 +20,7 @@ namespace DotNetCoreKit.Apis
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -33,12 +35,17 @@ namespace DotNetCoreKit.Apis
         /// <summary>
         /// Initializes a new instance of the <see cref="Startup"/> class.
         /// </summary>
-        /// <param name="configuration">
-        /// The configuration.
-        /// </param>
-        public Startup(IConfiguration configuration)
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="env">Environment variable for hosted service.</param>
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
-            Configuration = configuration;
+            Environment = env;
+
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("customwebsettings.json");
+
+            Configuration = builder.Build();
         }
 
         /// <summary>
@@ -52,16 +59,20 @@ namespace DotNetCoreKit.Apis
         public IContainer ApplicationContainer { get; private set; }
 
         /// <summary>
+        /// Gets or sets hosting Environment variable.
+        /// </summary>
+        public IHostingEnvironment Environment { get; set; }
+
+        /// <summary>
         /// This method gets called by the runtime. Use this method to add services to the container.
         /// </summary>
-        /// <param name="services">
-        /// The services.
-        /// </param>
+        /// <param name="services">The services.</param>
         /// <returns>Service Provider to allow dependency injection.</returns>
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // Add Db contexts
             var dbString = Guid.NewGuid().ToString();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseInMemoryDatabase(dbString));
 
@@ -71,6 +82,14 @@ namespace DotNetCoreKit.Apis
             services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            if (!Environment.IsDevelopment())
+            {
+                services.Configure<MvcOptions>(options => { options.Filters.Add(new RequireHttpsAttribute()); });
+            }
+
+            // Add settings from configuration
+            services.Configure<CustomWebSettings>(Configuration);
 
             // Configure the minimum requirements for said user identity.
             services.Configure<IdentityOptions>(options =>
@@ -136,16 +155,11 @@ namespace DotNetCoreKit.Apis
         /// <summary>
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         /// </summary>
-        /// <param name="app">
-        /// The app.
-        /// </param>
-        /// <param name="env">
-        /// The env.
-        /// </param>
+        /// <param name="app">The app.</param>
         /// <param name="applicationLifetime">application lifetime indicator</param>
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime applicationLifetime)
+        public void Configure(IApplicationBuilder app, IApplicationLifetime applicationLifetime)
         {
-            if (env.IsDevelopment())
+            if (Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
@@ -171,6 +185,7 @@ namespace DotNetCoreKit.Apis
                 c.ShowJsonEditor();
             });
 
+            // Enable custom routing here.
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

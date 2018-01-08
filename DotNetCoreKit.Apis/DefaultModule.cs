@@ -17,10 +17,8 @@ namespace DotNetCoreKit.Apis
         /// <inheritdoc/>
         protected override void Load(ContainerBuilder builder)
         {
-            // Register as a single server instance value to be referenced in any methods
-            builder.RegisterType<MachineClockDateTime>().As<IDateTime>().InstancePerLifetimeScope();
-
             // Registering a new lifetime/transient instances of application services.
+            builder.RegisterType<MachineClockDateTime>().As<IDateTime>().InstancePerLifetimeScope();
             builder.RegisterType<EmailSender>().As<IEmailSender>().InstancePerLifetimeScope();
         }
     }

@@ -11,6 +11,7 @@ namespace DotNetCoreKit.Apis.Controllers
     using System.Threading.Tasks;
 
     using DotNetCoreKit.Apis.Extensions;
+    using DotNetCoreKit.Apis.Models;
     using DotNetCoreKit.Apis.Models.AccountViewModels;
     using DotNetCoreKit.Models.Domain;
     using DotNetCoreKit.Utilities.Extensions;
@@ -20,11 +21,9 @@ namespace DotNetCoreKit.Apis.Controllers
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Options;
 
     /// <inheritdoc />
-    /// <summary>
-    /// The Account controller.
-    /// </summary>
     [ApiExplorerSettings(IgnoreApi = true)]
     [Authorize]
     [Route("[controller]/[action]")]
@@ -37,16 +36,19 @@ namespace DotNetCoreKit.Apis.Controllers
         /// <param name="signInManager">Used to manage user sign ins.</param>
         /// <param name="emailSender">Used to send email for account confirmation and password reset.</param>
         /// <param name="logger">Used to log exceptions or messages.</param>
+        /// <param name="settingsOptions">Used to read the custom web settings file for parsing.</param>
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            IOptions<CustomWebSettings> settingsOptions)
         {
             UserManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
             SignInManager = signInManager ?? throw new ArgumentNullException(nameof(signInManager));
             EmailSender = emailSender ?? throw new ArgumentNullException(nameof(emailSender));
             Logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            SettingsOptions = settingsOptions.Value ?? throw new ArgumentNullException(nameof(settingsOptions));
         }
 
         /// <summary>
@@ -76,6 +78,11 @@ namespace DotNetCoreKit.Apis.Controllers
         private ILogger Logger { get; }
 
         /// <summary>
+        /// Gets the settings options reference.
+        /// </summary>
+        private CustomWebSettings SettingsOptions { get; }
+
+        /// <summary>
         /// Provides basic login page.
         /// Forces logout of any existing user that is logged into current context as well.
         /// </summary>
@@ -88,6 +95,7 @@ namespace DotNetCoreKit.Apis.Controllers
             // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
+            Console.WriteLine(SettingsOptions.Title);
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
