@@ -42,7 +42,7 @@ namespace DotNetCoreKit.Apis.Controllers
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ILogger<AccountController> logger,
-            IOptions<CustomWebSettings> settingsOptions)
+            IOptions<AppConfigurationSettings> settingsOptions)
         {
             UserManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
             SignInManager = signInManager ?? throw new ArgumentNullException(nameof(signInManager));
@@ -80,7 +80,7 @@ namespace DotNetCoreKit.Apis.Controllers
         /// <summary>
         /// Gets the settings options reference.
         /// </summary>
-        private CustomWebSettings SettingsOptions { get; }
+        private AppConfigurationSettings SettingsOptions { get; }
 
         /// <summary>
         /// Provides basic login page.

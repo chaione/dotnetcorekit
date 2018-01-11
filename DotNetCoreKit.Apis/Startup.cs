@@ -8,6 +8,7 @@ namespace DotNetCoreKit.Apis
 {
     using System;
     using System.IO;
+    using System.Text;
 
     using Autofac;
     using Autofac.Extensions.DependencyInjection;
@@ -17,14 +18,17 @@ namespace DotNetCoreKit.Apis
     using DotNetCoreKit.Models.Domain;
     using FluentValidation.AspNetCore;
     using FluentValidations;
+    using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.PlatformAbstractions;
+    using Microsoft.IdentityModel.Tokens;
     using Swashbuckle.AspNetCore.Swagger;
 
     /// <summary>
@@ -43,7 +47,7 @@ namespace DotNetCoreKit.Apis
 
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("customwebsettings.json");
+                .AddJsonFile("appsettings.json");
 
             Configuration = builder.Build();
         }
@@ -89,37 +93,36 @@ namespace DotNetCoreKit.Apis
             }
 
             // Add settings from configuration
-            services.Configure<CustomWebSettings>(Configuration);
+            services.Configure<AppConfigurationSettings>(Configuration.GetSection("AppConfiguration"));
 
-            // Configure the minimum requirements for said user identity.
-            services.Configure<IdentityOptions>(options =>
+            // Add JWT token for authentication
+            services.AddAuthentication().AddJwtBearer(jwtBearerOptions =>
             {
-                // Password settings
-                options.Password.RequireDigit = true;
-                options.Password.RequiredLength = 10;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = true;
-                options.Password.RequireLowercase = false;
-                options.Password.RequiredUniqueChars = 6;
+                jwtBearerOptions.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidAudience = Configuration.GetSection("AppConfiguration:SiteUrl").Value,
+                    ValidIssuer = Configuration.GetSection("AppConfiguration:SiteUrl").Value,
+                    IssuerSigningKey =
+                        new SymmetricSecurityKey(
+                            Encoding.UTF8.GetBytes(Configuration.GetSection("AppConfiguration:Key").Value)),
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                };
 
-                // Lockout settings
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
-                options.Lockout.MaxFailedAccessAttempts = 10;
-                options.Lockout.AllowedForNewUsers = true;
+                jwtBearerOptions.Events = new JwtBearerEvents
+                {
+                    OnAuthenticationFailed = c =>
+                    {
+                        c.NoResult();
 
-                // User settings
-                options.User.RequireUniqueEmail = true;
-            });
+                        c.Response.StatusCode = 500;
+                        c.Response.ContentType = "text/plain";
 
-            services.ConfigureApplicationCookie(options =>
-            {
-                // Cookie settings
-                options.Cookie.HttpOnly = true;
-                options.Cookie.Expiration = TimeSpan.FromDays(150);
-                options.LoginPath = "/Account/Login"; // If the LoginPath is not set here, ASP.NET Core will default to /Account/Login
-                options.LogoutPath = "/Account/Logout"; // If the LogoutPath is not set here, ASP.NET Core will default to /Account/Logout
-                options.AccessDeniedPath = "/Account/AccessDenied"; // If the AccessDeniedPath is not set here, ASP.NET Core will default to /Account/AccessDenied
-                options.SlidingExpiration = true;
+                        return c.Response.WriteAsync(Environment.IsDevelopment()
+                            ? c.Exception.ToString()
+                            : "An error occurred processing your authentication.");
+                    },
+                };
             });
 
             // Add fluent validation and register validator using reflection to discover containing assembly.
