@@ -133,16 +133,16 @@ namespace DotNetCoreKit.Apis
             Mapper.Configuration.AssertConfigurationIsValid();
 
             // Swagger configurations
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(options =>
                 {
-                    c.SwaggerDoc("v1", new Info { Title = "My Api", Version = "v1" });
+                    options.SwaggerDoc("v1", new Info { Title = "My Api", Version = "v1" });
 
                     // Set the comments path for the Swagger JSON and UI.
                     var basePath = PlatformServices.Default.Application.ApplicationBasePath;
                     var xmlPath = Path.Combine(basePath, "DotNetCoreKit.xml");
-                    c.IncludeXmlComments(xmlPath);
-                    c.DescribeAllEnumsAsStrings();
-                    c.DescribeAllParametersInCamelCase();
+                    options.IncludeXmlComments(xmlPath);
+                    options.DescribeAllEnumsAsStrings();
+                    options.DescribeAllParametersInCamelCase();
                 });
 
             // Add Autofac
@@ -184,8 +184,8 @@ namespace DotNetCoreKit.Apis
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
                 c.InjectStylesheet("/swagger/custom.css");
-                c.DocExpansion("none");
-                c.ShowJsonEditor();
+                c.DocExpansion(DocExpansion.None);
+                c.EnableDeepLinking();
             });
 
             // Enable custom routing here.
