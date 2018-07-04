@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
     <PropertyGroup>
-        <TargetFramework>netcoreapp2.0</TargetFramework>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
         <AssemblyName>DotNetCoreKit.Apis</AssemblyName>
         <RootNamespace>DotNetCoreKit.Apis</RootNamespace>
         <GenerateFullPaths>true</GenerateFullPaths>
@@ -21,24 +21,23 @@
     <ItemGroup>
         <PackageReference Include="Autofac" Version="4.8.1" />
         <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
-        <PackageReference Include="AutoMapper" Version="6.2.2" />
-        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
-        <PackageReference Include="FluentAssertions" Version="5.3.0" />
+        <PackageReference Include="AutoMapper" Version="7.0.1" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.1" />
+        <PackageReference Include="FluentAssertions" Version="5.4.1" />
         <PackageReference Include="FluentAssertions.Json" Version="5.0.0" />
-        <PackageReference Include="FluentValidation.AspNetCore" Version="7.5.2" />
-        <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.0.4" />
-        <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.3" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.3" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.3" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.0.3" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.3" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="7.6.103" />
+        <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.1.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.5" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.3" />
-        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
         <PackageReference Include="NUnit" Version="3.10.1" />
         <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta004" PrivateAssets="All" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="2.4.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="2.5.0" />
     </ItemGroup>
     <ItemGroup>
         <AdditionalFiles Include="..\_stylecop\stylecop.json" Link="stylecop.json" />

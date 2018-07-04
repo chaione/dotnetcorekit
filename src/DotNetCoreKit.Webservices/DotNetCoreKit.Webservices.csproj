@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-DotNetCoreKit.Webservices-76605814-F66F-46E7-9B54-F76BB0A65144</UserSecretsId>
+      <GenerateFullPaths>true</GenerateFullPaths>
+      <GenerateDocumentationFile>true</GenerateDocumentationFile>
+      <CodeAnalysisRuleSet>..\_stylecop\StyleCopRules.ruleset</CodeAnalysisRuleSet>
+      <ApplicationIcon />
+      <Description>Contains the public api's that are exposed and consumed by end users/apps.</Description>
+      <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
+    <NoWarn>1701;1702;1705</NoWarn>
+    <DocumentationFile>bin\$(Configuration)\netcoreapp2.0\DotNetCoreKit.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\_stylecop\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Autofac" Version="4.8.1" />
+      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
+      <PackageReference Include="AutoMapper" Version="7.0.1" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.1" />
+      <PackageReference Include="FluentAssertions" Version="5.4.1" />
+      <PackageReference Include="FluentAssertions.Json" Version="5.0.0" />
+      <PackageReference Include="FluentValidation.AspNetCore" Version="7.6.103" />
+      <PackageReference Include="Microsoft.AspNetCore.App" />
+      <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.1.1" />
+      <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.1" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.1.1" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.5" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" />
+      <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+      <PackageReference Include="NUnit" Version="3.10.1" />
+      <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta004" PrivateAssets="All" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="2.5.0" />
+  </ItemGroup>
+    <ItemGroup>
+        <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DotNetCoreKit.EntityFramework\DotNetCoreKit.EntityFramework.csproj" />
+    <ProjectReference Include="..\DotNetCoreKit.Models\DotNetCoreKit.Models.csproj" />
+    <ProjectReference Include="..\DotNetCoreKit.Utilities\DotNetCoreKit.Utilities.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\swagger\custom.css" />
+    <None Include="wwwroot\swagger\images\favicon-16x16.png" />
+    <None Include="wwwroot\swagger\images\favicon-32x32.png" />
+    <None Include="wwwroot\swagger\images\favicon.ico" />
+    <None Include="wwwroot\swagger\images\logo_small.png" />
+    <None Include="wwwroot\swagger\images\throbber.gif" />
+  </ItemGroup>
+  <ItemGroup>
+      <Folder Include="FluentValidations\Extensions\Helpers\" />
+  </ItemGroup>
+
+</Project>

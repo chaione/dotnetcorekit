@@ -5,30 +5,32 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_stylecop", "_stylecop", "{46D6655D-AC94-4190-95D0-A501B5AB3F70}"
 	ProjectSection(SolutionItems) = preProject
-		_stylecop\CustomDictionary.xml = _stylecop\CustomDictionary.xml
-		_stylecop\stylecop.json = _stylecop\stylecop.json
-		_stylecop\StyleCopRules.ruleset = _stylecop\StyleCopRules.ruleset
+		src\_stylecop\CustomDictionary.xml = src\_stylecop\CustomDictionary.xml
+		src\_stylecop\stylecop.json = src\_stylecop\stylecop.json
+		src\_stylecop\StyleCopRules.ruleset = src\_stylecop\StyleCopRules.ruleset
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.DomainManager", "DotNetCoreKit.DomainManager\DotNetCoreKit.DomainManager.csproj", "{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.DomainManager", "src\DotNetCoreKit.DomainManager\DotNetCoreKit.DomainManager.csproj", "{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{83EA4F24-F6A1-4547-96DE-589004D0A5C3} = {83EA4F24-F6A1-4547-96DE-589004D0A5C3}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Models", "DotNetCoreKit.Models\DotNetCoreKit.Models.csproj", "{018B6419-3734-4BA8-BBBC-8878EA439671}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Models", "src\DotNetCoreKit.Models\DotNetCoreKit.Models.csproj", "{018B6419-3734-4BA8-BBBC-8878EA439671}"
 	ProjectSection(ProjectDependencies) = postProject
 		{83EA4F24-F6A1-4547-96DE-589004D0A5C3} = {83EA4F24-F6A1-4547-96DE-589004D0A5C3}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Apis", "DotNetCoreKit.Apis\DotNetCoreKit.Apis.csproj", "{7F3C8F82-E322-4C8B-BF8A-A8A8F4A3A5AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Apis", "src\DotNetCoreKit.Apis\DotNetCoreKit.Apis.csproj", "{7F3C8F82-E322-4C8B-BF8A-A8A8F4A3A5AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Utilities", "DotNetCoreKit.Utilities\DotNetCoreKit.Utilities.csproj", "{83EA4F24-F6A1-4547-96DE-589004D0A5C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Utilities", "src\DotNetCoreKit.Utilities\DotNetCoreKit.Utilities.csproj", "{83EA4F24-F6A1-4547-96DE-589004D0A5C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.EntityFramework", "DotNetCoreKit.EntityFramework\DotNetCoreKit.EntityFramework.csproj", "{5E796A5F-D36F-4CC9-8B7E-441929A02379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.EntityFramework", "src\DotNetCoreKit.EntityFramework\DotNetCoreKit.EntityFramework.csproj", "{5E796A5F-D36F-4CC9-8B7E-441929A02379}"
 	ProjectSection(ProjectDependencies) = postProject
 		{018B6419-3734-4BA8-BBBC-8878EA439671} = {018B6419-3734-4BA8-BBBC-8878EA439671}
 		{83EA4F24-F6A1-4547-96DE-589004D0A5C3} = {83EA4F24-F6A1-4547-96DE-589004D0A5C3}
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Webservices", "src\DotNetCoreKit.Webservices\DotNetCoreKit.Webservices.csproj", "{D2131EA5-B2DB-4B02-BFC6-709A30D10DCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{5E796A5F-D36F-4CC9-8B7E-441929A02379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E796A5F-D36F-4CC9-8B7E-441929A02379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E796A5F-D36F-4CC9-8B7E-441929A02379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2131EA5-B2DB-4B02-BFC6-709A30D10DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2131EA5-B2DB-4B02-BFC6-709A30D10DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2131EA5-B2DB-4B02-BFC6-709A30D10DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2131EA5-B2DB-4B02-BFC6-709A30D10DCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
