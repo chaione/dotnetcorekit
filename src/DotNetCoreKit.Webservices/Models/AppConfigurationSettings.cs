@@ -30,5 +30,10 @@ namespace DotNetCoreKit.Webservices.Models
         /// Gets or sets the Application Key used for generation of JWT tokens
         /// </summary>
         public string Key { get; set; }
+
+        /// <summary>
+        /// Gets or sets the application's token life time
+        /// </summary>
+        public int ExpirationInMinutes { get; set; }
     }
 }

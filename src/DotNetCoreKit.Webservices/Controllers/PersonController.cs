@@ -16,25 +16,31 @@ namespace DotNetCoreKit.Webservices.Controllers
     using DotNetCoreKit.Models.Dto;
     using DotNetCoreKit.Utilities.Extensions;
     using DotNetCoreKit.Webservices.FluentValidations;
+    using DotNetCoreKit.Webservices.Models;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Options;
 
     /// <inheritdoc />
     /// <summary>
     /// The person controller.
     /// </summary>
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class PersonController : ControllerBase
+    public class PersonController : CustomizedApiControllerBaseController
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PersonController"/> class.
         /// </summary>
-        /// <param name="context">
-        /// The context.
-        /// </param>
-        public PersonController(PeopleContext context)
+        /// <param name="context">The context.</param>
+        /// <param name="logger">Used to log exceptions or messages.</param>
+        /// <param name="settingsOptions">Used to read the custom web settings file for parsing.</param>
+        public PersonController(
+            PeopleContext context,
+            ILogger<AuthenticateController> logger,
+            IOptions<AppConfigurationSettings> settingsOptions)
+            : base(logger, settingsOptions)
         {
             Context = context;
 

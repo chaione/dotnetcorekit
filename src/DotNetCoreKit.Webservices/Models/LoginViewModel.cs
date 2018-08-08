@@ -9,16 +9,15 @@ namespace DotNetCoreKit.Webservices.Models
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// test
+    /// View model used to log a user in.
     /// </summary>
     public class LoginViewModel
     {
         /// <summary>
-        /// Gets or sets email address
+        /// Gets or sets user name
         /// </summary>
         [Required]
-        [EmailAddress]
-        public string Email { get; set; }
+        public string UserName { get; set; }
 
         /// <summary>
         /// Gets or sets password
@@ -26,11 +25,5 @@ namespace DotNetCoreKit.Webservices.Models
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the user should be preserved for future request when returning at a later time.
-        /// </summary>
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
     }
 }

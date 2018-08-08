@@ -4,16 +4,12 @@
 
 namespace DotNetCoreKit.Models.Domain
 {
+    /// <inheritdoc />
     /// <summary>
     /// Defines the People instance of a user
     /// </summary>
-    public class People
+    public class People : EntityBase
     {
-        /// <summary>
-        /// Gets or sets database Id
-        /// </summary>
-        public int Id { get; set; }
-
         /// <summary>
         /// Gets or sets name
         /// </summary>

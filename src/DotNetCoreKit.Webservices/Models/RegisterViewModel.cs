@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DotNetCoreKit.Apis.Models.AccountViewModels
+namespace DotNetCoreKit.Webservices.Models
 {
     using System.ComponentModel.DataAnnotations;
 

@@ -27,5 +27,14 @@ namespace DotNetCoreKit.EntityFramework
         /// Gets or sets the people.
         /// </summary>
         public DbSet<People> People { get; set; }
+
+        /// <inheritdoc />
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<People>().HasOne(x => x.CreatedBy);
+            modelBuilder.Entity<People>().HasOne(x => x.UpdatedBy);
+        }
     }
 }
