@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+      <AssemblyName>DotNetCoreKit.FluentValidations.Tests</AssemblyName>
+      <RootNamespace>DotNetCoreKit.FluentValidations.Tests</RootNamespace>
+      <GenerateFullPaths>true</GenerateFullPaths>
+      <GenerateDocumentationFile>true</GenerateDocumentationFile>
+      <CodeAnalysisRuleSet>..\..\src\_stylecop\StyleCopRules.ruleset</CodeAnalysisRuleSet>
+      <Description>This project will contain all the tests that run against the fluent validation to make sure we've added checks to the constraints being used and they are valid on each build.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
+    <NoWarn>1701;1702;1705</NoWarn>
+    <DocumentationFile>bin\$(Configuration)\netcoreapp2.0\DotNetCoreKit.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\src\_stylecop\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.4.1" />
+    <PackageReference Include="FluentAssertions.Json" Version="5.0.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="7.6.105" />
+    <PackageReference Include="NUnit" Version="3.10.1" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DotNetCoreKit.Abstractions\DotNetCoreKit.Abstractions.csproj" />
+  </ItemGroup>
+</Project>

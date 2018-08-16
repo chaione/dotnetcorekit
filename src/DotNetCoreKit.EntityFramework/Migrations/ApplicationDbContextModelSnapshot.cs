@@ -8,7 +8,7 @@ namespace DotNetCoreKit.EntityFramework.Migrations
 {
     using System;
 
-    using DotNetCoreKit.Utilities.Constants;
+    using DotNetCoreKit.Abstractions.Constants;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Infrastructure;
     using Microsoft.EntityFrameworkCore.Metadata;

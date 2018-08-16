@@ -7,8 +7,8 @@
 namespace DotNetCoreKit.Webservices
 {
     using Autofac;
-    using DotNetCoreKit.Utilities.Extensions;
-    using DotNetCoreKit.Utilities.Interfaces;
+    using DotNetCoreKit.Abstractions.Extensions;
+    using DotNetCoreKit.Abstractions.Interfaces;
     using DotNetCoreKit.Webservices.Services;
 
     /// <inheritdoc />

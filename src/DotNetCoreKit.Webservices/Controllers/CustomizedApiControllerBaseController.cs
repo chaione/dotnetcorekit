@@ -14,6 +14,7 @@ namespace DotNetCoreKit.Webservices.Controllers
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Options;
 
+    /// <inheritdoc />
     /// <summary>
     /// Base controller class used to set up generic repeated configuration application context wide.
     /// </summary>

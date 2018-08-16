@@ -2,7 +2,7 @@
 <RuleSet Name="StyleCopeRules" Description="StyleCopeRules custom ruleset" ToolsVersion="15.0">
   <IncludeAll Action="Warning" />
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
-    <Rule Id="SA1101" Action="None"/>
-    <Rule Id="SA1126" Action="None"/>
+    <Rule Id="SA1101" Action="None" />
+    <Rule Id="SA1126" Action="None" />
   </Rules>
 </RuleSet>

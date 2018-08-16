@@ -8,7 +8,7 @@ namespace DotNetCoreKit.Webservices.Services
 {
     using System.Threading.Tasks;
 
-    using DotNetCoreKit.Utilities.Interfaces;
+    using DotNetCoreKit.Abstractions.Interfaces;
 
     /// <inheritdoc />
     public abstract class EmailSender : IEmailSender

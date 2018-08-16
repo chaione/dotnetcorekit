@@ -13,9 +13,9 @@ namespace DotNetCoreKit.Webservices
     using Autofac;
     using Autofac.Extensions.DependencyInjection;
     using AutoMapper;
+    using DotNetCoreKit.Abstractions;
+    using DotNetCoreKit.Abstractions.Domain;
     using DotNetCoreKit.EntityFramework;
-    using DotNetCoreKit.Models.Domain;
-    using DotNetCoreKit.Webservices.FluentValidations;
     using DotNetCoreKit.Webservices.Models;
     using FluentValidation.AspNetCore;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -32,7 +32,7 @@ namespace DotNetCoreKit.Webservices
     using Swashbuckle.AspNetCore.Swagger;
 
     /// <summary>
-    /// The startup method that starts the whole api service
+    /// The startup method that starts the whole api service.
     /// </summary>
     public class Startup
     {
@@ -46,8 +46,8 @@ namespace DotNetCoreKit.Webservices
             Environment = env;
 
             var builder = new ConfigurationBuilder()
-                         .SetBasePath(env.ContentRootPath)
-                         .AddJsonFile("appsettings.json");
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json");
 
             Configuration = builder.Build();
         }
@@ -103,8 +103,8 @@ namespace DotNetCoreKit.Webservices
                     ValidAudience = Configuration.GetSection("AppConfiguration:SiteUrl").Value,
                     ValidIssuer = Configuration.GetSection("AppConfiguration:SiteUrl").Value,
                     IssuerSigningKey =
-                        new SymmetricSecurityKey(
-                            Encoding.UTF8.GetBytes(Configuration.GetSection("AppConfiguration:Key").Value)),
+                new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(Configuration.GetSection("AppConfiguration:Key").Value)),
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                 };
@@ -118,9 +118,9 @@ namespace DotNetCoreKit.Webservices
                         c.Response.StatusCode = 500;
                         c.Response.ContentType = "text/plain";
 
-                        return c.Response.WriteAsync(Environment.IsDevelopment()
-                            ? c.Exception.ToString()
-                            : "An error occurred processing your authentication.");
+                        return c.Response.WriteAsync(Environment.IsDevelopment() ?
+                            c.Exception.ToString() :
+                            "An error occurred processing your authentication.");
                     },
                 };
             });
@@ -134,16 +134,16 @@ namespace DotNetCoreKit.Webservices
 
             // Swagger configurations
             services.AddSwaggerGen(options =>
-                {
-                    options.SwaggerDoc("v1", new Info { Title = "My Api", Version = "v1" });
+            {
+                options.SwaggerDoc("v1", new Info { Title = "My Api", Version = "v1" });
 
-                    // Set the comments path for the Swagger JSON and UI.
-                    var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-                    var xmlPath = Path.Combine(basePath, "DotNetCoreKit.xml");
-                    options.IncludeXmlComments(xmlPath);
-                    options.DescribeAllEnumsAsStrings();
-                    options.DescribeAllParametersInCamelCase();
-                });
+                // Set the comments path for the Swagger JSON and UI.
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                var xmlPath = Path.Combine(basePath, "DotNetCoreKit.xml");
+                options.IncludeXmlComments(xmlPath);
+                options.DescribeAllEnumsAsStrings();
+                options.DescribeAllParametersInCamelCase();
+            });
 
             // Add Autofac
             var containerBuilder = new ContainerBuilder();
@@ -159,7 +159,7 @@ namespace DotNetCoreKit.Webservices
         /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         /// </summary>
         /// <param name="app">The app.</param>
-        /// <param name="applicationLifetime">application lifetime indicator</param>
+        /// <param name="applicationLifetime">application lifetime indicator.</param>
         public void Configure(IApplicationBuilder app, IApplicationLifetime applicationLifetime)
         {
             if (Environment.IsDevelopment())

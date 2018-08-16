@@ -9,12 +9,12 @@ namespace DotNetCoreKit.Webservices.Models
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// test
+    /// Registration model for creating a new account.
     /// </summary>
     public class RegisterViewModel
     {
         /// <summary>
-        /// Gets or sets test
+        /// Gets or sets email.
         /// </summary>
         [Required]
         [EmailAddress]
@@ -22,7 +22,7 @@ namespace DotNetCoreKit.Webservices.Models
         public string Email { get; set; }
 
         /// <summary>
-        /// Gets or sets test
+        /// Gets or sets password.
         /// </summary>
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
@@ -31,7 +31,7 @@ namespace DotNetCoreKit.Webservices.Models
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets test
+        /// Gets or sets password confirmation.
         /// </summary>
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]

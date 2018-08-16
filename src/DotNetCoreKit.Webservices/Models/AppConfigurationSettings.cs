@@ -12,12 +12,12 @@ namespace DotNetCoreKit.Webservices.Models
     public class AppConfigurationSettings
     {
         /// <summary>
-        /// Gets or sets Title value
+        /// Gets or sets Title value.
         /// </summary>
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or sets Updates value
+        /// Gets or sets Updates value.
         /// </summary>
         public int Updates { get; set; }
 
@@ -27,12 +27,12 @@ namespace DotNetCoreKit.Webservices.Models
         public string SiteUrl { get; set; }
 
         /// <summary>
-        /// Gets or sets the Application Key used for generation of JWT tokens
+        /// Gets or sets the Application Key used for generation of JWT tokens.
         /// </summary>
         public string Key { get; set; }
 
         /// <summary>
-        /// Gets or sets the application's token life time
+        /// Gets or sets the application's token life time.
         /// </summary>
         public int ExpirationInMinutes { get; set; }
     }

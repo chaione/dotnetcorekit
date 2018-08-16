@@ -10,25 +10,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_stylecop", "_stylecop", "{
 		src\_stylecop\StyleCopRules.ruleset = src\_stylecop\StyleCopRules.ruleset
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.DomainManager", "src\DotNetCoreKit.DomainManager\DotNetCoreKit.DomainManager.csproj", "{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}"
-	ProjectSection(ProjectDependencies) = postProject
-		{83EA4F24-F6A1-4547-96DE-589004D0A5C3} = {83EA4F24-F6A1-4547-96DE-589004D0A5C3}
-	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Models", "src\DotNetCoreKit.Models\DotNetCoreKit.Models.csproj", "{018B6419-3734-4BA8-BBBC-8878EA439671}"
-	ProjectSection(ProjectDependencies) = postProject
-		{83EA4F24-F6A1-4547-96DE-589004D0A5C3} = {83EA4F24-F6A1-4547-96DE-589004D0A5C3}
-	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Utilities", "src\DotNetCoreKit.Utilities\DotNetCoreKit.Utilities.csproj", "{83EA4F24-F6A1-4547-96DE-589004D0A5C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Abstractions", "src\DotNetCoreKit.Abstractions\DotNetCoreKit.Abstractions.csproj", "{018B6419-3734-4BA8-BBBC-8878EA439671}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.EntityFramework", "src\DotNetCoreKit.EntityFramework\DotNetCoreKit.EntityFramework.csproj", "{5E796A5F-D36F-4CC9-8B7E-441929A02379}"
 	ProjectSection(ProjectDependencies) = postProject
 		{018B6419-3734-4BA8-BBBC-8878EA439671} = {018B6419-3734-4BA8-BBBC-8878EA439671}
-		{83EA4F24-F6A1-4547-96DE-589004D0A5C3} = {83EA4F24-F6A1-4547-96DE-589004D0A5C3}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.Webservices", "src\DotNetCoreKit.Webservices\DotNetCoreKit.Webservices.csproj", "{D2131EA5-B2DB-4B02-BFC6-709A30D10DCD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreKit.FluentValidations.Tests", "tests\DotNetCoreKit.FluentValidation.Tests\DotNetCoreKit.FluentValidations.Tests.csproj", "{1FB406B4-5C15-4376-8DE6-D54D322DD962}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,18 +27,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3AF9EEA3-B038-4C9D-A54F-C9974547BCA0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{018B6419-3734-4BA8-BBBC-8878EA439671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{018B6419-3734-4BA8-BBBC-8878EA439671}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{018B6419-3734-4BA8-BBBC-8878EA439671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{018B6419-3734-4BA8-BBBC-8878EA439671}.Release|Any CPU.Build.0 = Release|Any CPU
-		{83EA4F24-F6A1-4547-96DE-589004D0A5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83EA4F24-F6A1-4547-96DE-589004D0A5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83EA4F24-F6A1-4547-96DE-589004D0A5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83EA4F24-F6A1-4547-96DE-589004D0A5C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E796A5F-D36F-4CC9-8B7E-441929A02379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E796A5F-D36F-4CC9-8B7E-441929A02379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E796A5F-D36F-4CC9-8B7E-441929A02379}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,6 +39,10 @@ Global
 		{D2131EA5-B2DB-4B02-BFC6-709A30D10DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2131EA5-B2DB-4B02-BFC6-709A30D10DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2131EA5-B2DB-4B02-BFC6-709A30D10DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FB406B4-5C15-4376-8DE6-D54D322DD962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FB406B4-5C15-4376-8DE6-D54D322DD962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FB406B4-5C15-4376-8DE6-D54D322DD962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FB406B4-5C15-4376-8DE6-D54D322DD962}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

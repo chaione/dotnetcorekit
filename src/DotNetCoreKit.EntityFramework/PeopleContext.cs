@@ -6,7 +6,7 @@
 
 namespace DotNetCoreKit.EntityFramework
 {
-    using DotNetCoreKit.Models.Domain;
+    using DotNetCoreKit.Abstractions.Domain;
     using Microsoft.EntityFrameworkCore;
 
     /// <inheritdoc />

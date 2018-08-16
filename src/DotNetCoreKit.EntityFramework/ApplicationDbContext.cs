@@ -6,7 +6,7 @@
 
 namespace DotNetCoreKit.EntityFramework
 {
-    using DotNetCoreKit.Models.Domain;
+    using DotNetCoreKit.Abstractions.Domain;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
@@ -16,7 +16,7 @@ namespace DotNetCoreKit.EntityFramework
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationDbContext"/> class.
         /// </summary>
-        /// <param name="options">optional params</param>
+        /// <param name="options">Options parameter to provide additional configuration changes from default configurations.</param>
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
