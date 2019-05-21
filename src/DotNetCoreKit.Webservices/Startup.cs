@@ -30,6 +30,7 @@ namespace DotNetCoreKit.Webservices
     using Microsoft.Extensions.PlatformAbstractions;
     using Microsoft.IdentityModel.Tokens;
     using Swashbuckle.AspNetCore.Swagger;
+    using Swashbuckle.AspNetCore.SwaggerUI;
 
     /// <summary>
     /// The startup method that starts the whole api service.
@@ -129,7 +130,7 @@ namespace DotNetCoreKit.Webservices
             services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<PersonValidator>());
 
             // Automapper configurations
-            services.AddAutoMapper();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             Mapper.Configuration.AssertConfigurationIsValid();
 
             // Swagger configurations
